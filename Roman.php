@@ -30,6 +30,11 @@
  */
 
 /**
+ * Needed for error handling
+ */
+require_once 'PEAR.php';
+
+/**
  * Provides utilities to convert roman numerals to
  * arabic numbers and convert arabic numbers to roman numerals.
  *
@@ -56,7 +61,21 @@ class Numbers_Roman
      */
     function toNumber($roman)
     {
+        /*
+         * insure that matching works
+         */
         $roman = strtoupper($roman);
+
+        /*
+         * remove all inapropriate characters
+         */
+        $roman = preg_replace('/[ABE-HJKN-TWYZ1-9\W\s]/', '', $roman);
+
+        /*
+         * replace u with v, in case the number being parsed
+         * uses a variant character set
+         */
+        $roman = str_replace('U', 'V', $roman);
 
         /*
          * Replacing the Numerals representing an integer higher then 4000
@@ -70,43 +89,81 @@ class Numbers_Roman
         $roman = str_replace('_D', 'O', $roman);
         $roman = str_replace('_M', 'N', $roman);
 
+        /*
+         * now for the conversion table.
+         * the characters must be precisely in the same order
+         * as the number array members they represent. This way,
+         * their position in the string precisely represents
+         * the array key of the corresponding number.
+         */
+        $conv_chars = 'IVXLCDMSRPQON0';
         $conv = array(
-            array('letter' => 'I', 'number' => 1),
-            array('letter' => 'V', 'number' => 5),
-            array('letter' => 'X', 'number' => 10),
-            array('letter' => 'L', 'number' => 50),
-            array('letter' => 'C', 'number' => 100),
-            array('letter' => 'D', 'number' => 500),
-            array('letter' => 'M', 'number' => 1000),
-            array('letter' => 'S', 'number' => 5000),
-            array('letter' => 'R', 'number' => 10000),
-            array('letter' => 'Q', 'number' => 50000),
-            array('letter' => 'P', 'number' => 100000),
-            array('letter' => 'O', 'number' => 500000),
-            array('letter' => 'N', 'number' => 1000000),
-            array('letter' => 0, 'number' => 0)
+                        1,
+                        5,
+                        10,
+                        50,
+                        100,
+                        500,
+                        1000,
+                        5000,
+                        10000,
+                        50000,
+                        100000,
+                        500000,
+                        1000000,
+                        0
         );
 
+        /*
+         * initialize variables
+         */
         $arabic = 0;
         $state = 0;
         $sidx = 0;
+        $pos = 0;
         $len = strlen($roman) - 1;
 
+        /*
+         * the numeral string is processed from right to left.
+         */
         while ($len >= 0) {
-            $i = 0;
             $sidx = $len;
 
-            while ($conv[$i]['number'] > 0) {
-                if (strtoupper($roman[$sidx]) == $conv[$i]['letter']) {
-                    if ($state > $conv[$i]['number']) {
-                        $arabic -= $conv[$i]['number'];
-                    } else {
-                        $arabic += $conv[$i]['number'];
-                        $state = $conv[$i]['number'];
-                    }
+            /*
+             * finds the array key by checking the location
+             * of the character in the string $conv_chars
+             */
+            $pos = strpos($conv_chars, $roman[$sidx]);
+
+            /*
+             * If a character is not found in the string,
+             * generate an error message using PEAR_Error
+             */
+            if ($pos === false) {
+                PEAR::raiseError('Numbers_Roman::toNumber error: Invalid characters in input',0, PEAR_ERROR_TRIGGER);
+            } else {
+
+               /*
+                * if the precedingly processed numeral is higher,
+                * subtract the value of the current numeral.
+                */
+                if ($state > $conv[$pos]) {
+                    $arabic -= $conv[$pos];
+
+                   /*
+                    * else, add the value of the numeral to our number
+                    * and remember it for the if clause directly
+                    * preceding this else
+                    */
+                } else {
+                    $arabic += $conv[$pos];
+                    $state = $conv[$pos];
                 }
-                $i++;
             }
+
+            /*
+             * move one place to the left
+             */
             $len--;
         }
 
