@@ -37,7 +37,7 @@
     * @access public
     * @author David Costa <gurugeek@php.net>
     * @package Numbers_Roman
-    * @version $  $
+    * @Version $  $
      
     */
      
@@ -64,7 +64,7 @@
        /**
          * Replacing the Numerals representing an integer higher then 4000
          * e.g. _X represent 10 000 _L  represent 50 000 etc
-         * we first convert into single characters
+         * we first convert them into single characters
          * 
          */
         	
@@ -141,8 +141,12 @@
         *
         * @param  integer $num         An integer between 0 and 3999 inclusive
         *                              that should be converted to a roman numeral
-        *       		               integers over 3999 are supported from version 0.1.2
-        *
+        *       		               integers higher then 3999 are supported from version 0.1.2
+        *           Note:
+        *           For an accurate result the integer shouldn't be higher then
+        *           5 999 999. Higher integers are still converted but they do not reflect an
+        *           historically correct Roman Numeral.
+        *        
         *         		  $uppercase   Uppercase output: default true      
 	    *        	
 	    *		       	  $html	       Enable html overscore required for integers over 3999 	
@@ -153,7 +157,7 @@
         *
         */
          
-        function toNumeral($num, $uppercase = true, $html=true) 
+        function toNumeral($num, $uppercase = true, $html = true) 
         {             
             $conv = array(10 => array('X', 'C', 'M'),
                 5 => array('V', 'L', 'D'),
@@ -205,8 +209,8 @@
          * the html overscore
          */ 
            if ($html == true) {
-                $over = '<u style="text-decoration:overline;" style=&{\'text-decoration:underline;\'};>';
-            	$overe = '</u>';          	           	 
+                $over = '<span style="text-decoration:overline;">';
+            	$overe = '</span>';          	           	 
 			} 
 			elseif ($html == false) {   
 				    $over = '_';
@@ -227,6 +231,10 @@
          *  10 000 is   _X (overscore X) in Roman Numeral
          *   5 000 is   _V (overscore V) in Roman Numeral
          *   4 000 is M _V (overscore on the V only) in Roman Numeral
+         *
+         * For an accurate result the integer shouldn't be higher then
+         * 5 999 999. Higher integers are still converted but they do not reflect an
+         * historically correct Roman Numeral.
          */     
 		         
 		    $roman = str_replace(str_repeat("M", 1000),  $over."AFS".  $overe, $roman);
