@@ -2,37 +2,37 @@
 <!-- do not use the "Type" attribute here, that one is only for
      generated package.xml files -->
 <package>
- <name>Numbers_Roman</name>
- <summary>Provides methods for converting to and from roman numerals.</summary>
- <description>
+  <name>Numbers_Roman</name>
+  <summary>Provides methods for converting to and from roman numerals.</summary>
+  <description>
 This package provides static methods for converting to and from roman numerals.
- </description>
- <maintainers>
-  <maintainer>
-   <user>sterling</user>
-   <name>Sterling Hughes</name>
-   <email>sterling@php.net</email>
-  </maintainer>
-  <maintainer>
-   <user>thesaur</user>
-   <name>Klaus Guenther</name>
-   <email>klaus@capitalfocus.org</email>
-   <role>lead</role>
-  </maintainer>
- </maintainers>
- <release>
-  <license>PHP</license>
-  <version>0.1</version>
-  <date>2002-01-26</date>
-  <notes>
+  </description>
+  <maintainers>
+    <maintainer>
+      <user>sterling</user>
+      <name>Sterling Hughes</name>
+      <email>sterling@php.net</email>
+    </maintainer>
+    <maintainer>
+      <user>thesaur</user>
+      <name>Klaus Guenther</name>
+      <email>klaus@capitalfocus.org</email>
+      <role>lead</role>
+    </maintainer>
+  </maintainers>
+  <release>
+    <license>PHP</license>
+    <version>0.1</version>
+    <date>2002-01-26</date>
+    <notes>
    This is the initial release of the Numbers_Roman package which has
    been in php4/pear for a while.
-  </notes>
-  <state>stable</state>
-</release>
- <filelist>
-  <dir name="/" baseinstalldir="Numbers">
-   <file role="php">Roman.php</file>
-  </dir>
- </filelist>
+    </notes>
+    <state>stable</state>
+  </release>
+  <filelist>
+    <dir name="/" baseinstalldir="Numbers">
+      <file role="php">Roman.php</file>
+    </dir>
+  </filelist>
 </package>
