@@ -133,9 +133,9 @@ class Numbers_Roman
      *           than 5 999 999. Higher integers are still converted but
      *           they do not reflect an historically correct Roman Numeral.
      *
-     *                 $uppercase   Uppercase output: default true
+     * @param  bool    $uppercase   Uppercase output: default true
      *
-     *                 $html        Enable html overscore required for
+     * @param  bool    $html        Enable html overscore required for
      *                              integers over 3999. default true
      * @return string  $roman The corresponding roman numeral
      *
@@ -273,3 +273,4 @@ class Numbers_Roman
  */
 
 ?>
+
