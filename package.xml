@@ -1,27 +1,32 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE package SYSTEM "../package.dtd">
+<!-- do not use the "Type" attribute here, that one is only for
+     generated package.xml files -->
 <package version="1.0">
   <name>Math_Number</name>
   <summary>Library to work with different number formats.</summary>
   <description>
-  Library to work with different number formats.
- </description>
+   Library to work with different number formats.  </description>
   <maintainers>
     <maintainer>
       <user>sterling</user>
       <name>Sterling Hughes</name>
       <email>sterling@php.net</email>
+      <role>lead</role>
     </maintainer>
   </maintainers>
+
   <release>
+    <license>PHP</license>
     <version>1.0</version>
     <date>2002-01-20</date>
+    <state>stable</state>
     <notes>
-   This is the initial independent PEAR release.
-  </notes>
+This is the initial independent PEAR release.
+    </notes>
     <filelist>
       <dir name="/" baseinstalldir="Math">
-	<file role="php">Roman.php</file>
+	    <file role="php">Roman.php</file>
       </dir>
     </filelist>
   </release>
