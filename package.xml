@@ -7,11 +7,19 @@
  <description>
 This package provides static methods for converting to and from roman numerals.
  </description>
- <maintainer>
-  <user>sterling</user>
-  <name>Sterling Hughes</name>
-  <email>sterling@php.net</email>
- </maintainer>
+ <maintainers>
+  <maintainer>
+   <user>sterling</user>
+   <name>Sterling Hughes</name>
+   <email>sterling@php.net</email>
+  </maintainer>
+  <maintainer>
+   <user>thesaur</user>
+   <name>Klaus Guenther</name>
+   <email>klaus@capitalfocus.org</email>
+   <role>lead</role>
+  </maintainer>
+ </maintainers>
  <release>
   <license>PHP</license>
   <version>0.1</version>
