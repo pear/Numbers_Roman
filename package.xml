@@ -7,6 +7,7 @@
 	  It supports Roman numerals in both uppercase and lowercase styles and conversion 
 	  for and to numbers up to 5 999 999
   </description>
+<license>PHP</license> 
   <maintainers>
     <maintainer>
       <user>gurugeek</user>
@@ -23,7 +24,7 @@
   </maintainers>
   <release>
     <version>0.1.2</version>
-    <date>2004-04-19</date>
+    <date>2004-04-25</date>
     <license>PHP</license>
     <state>stable</state>
     <notes>
@@ -34,9 +35,14 @@
 	     accurate fashion 
 	    -General fixes and code rewrite maintaining backward compatibility
     </notes>
-    <filelist>
-      <file role="php" baseinstalldir="Numbers" name="Roman.php"/>
-    </filelist>
+    <state>stable</state>
+    <filelist> 
+<dir name="/" baseinstalldir="Numbers"> 
+Ê Ê Ê <file role="php" baseinstalldir="Numbers" name="Roman.php"/> 
+Ê Ê Ê Ê <file role="php">Roman.php</file> 
+Ê Ê Ê </dir> 
+   </filelist>
+
   </release>
   <changelog>
 
