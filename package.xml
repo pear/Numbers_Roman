@@ -3,9 +3,10 @@
 <package version="1.0">
   <name>Numbers_Roman</name>
   <summary>Provides methods for converting to and from Roman Numerals.</summary>
-  <description>Numbers_Roman provides static methods for converting to and from Roman numerals.
-	  It supports Roman numerals in both uppercase and lowercase styles and conversion 
-	  for and to numbers up to 5 999 999
+  <description>
+    Numbers_Roman provides static methods for converting to and from Roman numerals.
+    It supports Roman numerals in both uppercase and lowercase styles and conversion 
+    for and to numbers up to 5 999 999
   </description>
 <license>PHP</license> 
   <maintainers>
@@ -28,39 +29,38 @@
     <license>PHP</license>
     <state>stable</state>
     <notes>
-	    -Added support for lowercase input/output
-	    -Starting with this release conversion is supported from integers up to 5 999 999
-             and from the equivalent Roman Numerals
-	    -Added an optional HTML tag to disply roman numerals over 4000 in an historically
-	     accurate fashion 
-	    -General fixes and code rewrite maintaining backward compatibility
+      - Added support for lowercase input/output
+      - Starting with this release conversion is supported from integers up to 5 999 999
+        and from the equivalent Roman Numerals
+      - Added an optional HTML tag to disply roman numerals over 4000 in an historically
+        accurate fashion 
+      - General fixes and code rewrite maintaining backward compatibility
     </notes>
     <state>stable</state>
     <filelist> 
-<dir name="/" baseinstalldir="Numbers"> 
- <file role="php" baseinstalldir="Numbers" name="Roman.php"/> 
-<file role="php">Roman.php</file> 
-</dir> 
-   </filelist>
-
+      <dir name="/" baseinstalldir="Numbers"> 
+        <file role="php" baseinstalldir="Numbers" name="Roman.php"/> 
+        <file role="php">Roman.php</file> 
+      </dir> 
+    </filelist>
   </release>
   <changelog>
-
- <release>
-    <version>0.1.1</version>
-    <date>2004-02-26</date>
-    <license>PHP</license>
-    <state>stable</state>
-    <notes>Fix to enable installation with PEAR installers.</notes>
+    <release>
+      <version>0.1.1</version>
+      <date>2004-02-26</date>
+      <license>PHP</license>
+      <state>stable</state>
+      <notes>Fix to enable installation with PEAR installers.</notes>
     </release>
     <release>
       <version>0.1</version>
       <date>2002-01-26</date>
       <state>stable</state>
-      <notes>This is the initial release of the Numbers_Roman package which has
-been in php4/pear for a while.
-      
-</notes>
+      <notes>
+        This is the initial release of the Numbers_Roman package which has
+        been in php4/pear for a while.
+      </notes>
     </release>
   </changelog>
 </package>
+
