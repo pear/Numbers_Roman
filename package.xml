@@ -38,9 +38,9 @@
     <state>stable</state>
     <filelist> 
 <dir name="/" baseinstalldir="Numbers"> 
-Ê Ê Ê <file role="php" baseinstalldir="Numbers" name="Roman.php"/> 
-Ê Ê Ê Ê <file role="php">Roman.php</file> 
-Ê Ê Ê </dir> 
+ <file role="php" baseinstalldir="Numbers" name="Roman.php"/> 
+<file role="php">Roman.php</file> 
+</dir> 
    </filelist>
 
   </release>
