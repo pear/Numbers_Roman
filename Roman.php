@@ -3,7 +3,7 @@
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 1997-2003 The PHP Group                                |
+// | Copyright (c) 1997-2004 The PHP Group                                |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.02 of the PHP license,      |
 // | that is bundled with this package in the file LICENSE, and is        |
@@ -24,6 +24,15 @@ require_once("PEAR.php");
 /**
  * The Numbers_Roman class provides utilities to convert roman numerals to
  * arabic numbers and convert arabic numbers to roman numerals
+ *
+ * <?php
+ * require_once 'Numbers/Roman.php';
+ * 
+ * $arabic = Numbers_Roman::toNumber('vi');
+ * echo "The arabic equivalent of vi is $arabic\n";
+ * $roman = Numbers_Roman::toNumeral($arabic);
+ * echo "The reverse conversion resulted in $roman\n";
+ * ?>
  *
  * @access public
  * @author Sterling Hughes <sterling@php.net>
@@ -86,6 +95,18 @@ class Numbers_Roman extends PEAR
 
     // }}}
     // {{{ toRoman()
+    /**
+     * A backwards compatibility alias for toNumeral()
+     *
+     * @access private
+     */
+    function toRoman($num)
+    {
+        return $this->toNumeral($num);
+    }
+
+    // }}}
+    // {{{ toNumeral()
 
     /**
      * Converts a number to its roman numeral representation
@@ -99,10 +120,10 @@ class Numbers_Roman extends PEAR
      * @author Sterling Hughes <sterling@php.net>
      * @since  PHP 4.0.5
      */
-    function toRoman($num) {
-        $conv = array('10' => array('X', 'C', 'M'),
-                      '5'  => array('V', 'L', 'D'),
-                      '1'  => array('I', 'X', 'C'));
+    function toNumeral($num) {
+        $conv = array(10 => array('X', 'C', 'M'),
+                      5  => array('V', 'L', 'D'),
+                      1  => array('I', 'X', 'C'));
         $roman = '';
 
         if ($num < 0) {
