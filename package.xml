@@ -24,10 +24,10 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>0.2.0</version>
+    <version>1.0.1</version>
     <date>2004-04-28</date>
     <license>PHP</license>
-    <state>stable</state>
+    <state>beta</state>
     <notes>
       - Added support for lowercase input/output
       - Starting with this release conversion is supported from integers up to 
@@ -39,11 +39,13 @@
     <state>stable</state>
     <filelist> 
       <dir name="/" baseinstalldir="Numbers"> 
-	<file role="php">Roman.php</file>
-        <dir name="docs">
+       <file role="php">Roman.php</file>
+       <dir name="docs">
+         <dir name="examples">     
           <file role="doc">example.php</file>	
        </dir>
      </dir> 
+   </dir> 
     </filelist>
   </release>
   <changelog>
