@@ -49,6 +49,22 @@
     </filelist>
   </release>
   <changelog>
+  <release>
+    <version>0.2.0</version>
+    <date>2004-04-28</date>
+    <license>PHP</license>
+    <state>stable</state>
+    <notes>- Added support for lowercase input/output
+- Starting with this release conversion is supported from integers up to 
+  5 999 999 and from the equivalent Roman Numerals
+- Added an optional HTML tag to disply roman numerals over 4000 in an 
+  historically accurate fashion 
+- General fixes and code rewrite maintaining backward compatibility</notes>
+    <filelist>
+      <file role="php" baseinstalldir="Numbers" name="Roman.php"/>
+      <file role="doc" baseinstalldir="Numbers" name="docs/example.php"/>
+    </filelist>
+  </release>
     <release>
       <version>0.1.1</version>
       <date>2004-02-26</date>
