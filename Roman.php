@@ -21,10 +21,19 @@
 // {{{ Numbers_Roman
 
 /**
+ * Provides utilities to convert roman numerals to arabic numbers
+ * and convert arabic numbers to roman numerals.
+ * 
+ * @author David Costa <gurugeek@php.net>
+ * @author Sterling Hughes <sterling@php.net>
+ * @package Numbers_Roman
+ */
+
+/**
  * Provides utilities to convert roman numerals to
  * arabic numbers and convert arabic numbers to roman numerals.
  *
- * Supports lower case input and output and some furthers conversion
+ * Supports lower case input and output and some further conversion
  * functions.
  *
  * @access public
@@ -39,11 +48,10 @@ class Numbers_Roman
     /**
      * Converts a roman numeral to a number
      *
-     * @param  string  $roman The roman numeral to convert
-     *                        lower cased numerals are converted into
-     *                        uppercase
-     * @return integer $num   The number corresponding to the
-     *                        given roman numeral
+     * @param  string  $roman The roman numeral to convert lower cased 
+     *                        numerals are converted into uppercase 
+     * @return integer $num   The number corresponding to the 
+     *                        given roman numeral 
      * @access public
      */
     function toNumber($roman)
@@ -248,6 +256,14 @@ class Numbers_Roman
          * and 900 000
          */
         $roman = str_replace('AFS', 'M', $roman);
+        
+        /*
+         * Make HTML output more readable by combining span tags
+         * where possible.
+         */
+        if ($html == true) {
+            $roman = str_replace($overe.$over, '', $roman);
+        }
 
         /*
          * Checking for lowercase output
