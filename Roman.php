@@ -100,9 +100,9 @@ class Numbers_Roman extends PEAR
      * @since  PHP 4.0.5
      */
     function toRoman($num) {
-        $conv = array(10 => array('X', 'C', 'M'),
-                      5  => array('V', 'L', 'D'),
-                      1  => array('I', 'X', 'C'));
+        $conv = array('10' => array('X', 'C', 'M'),
+                      '5'  => array('V', 'L', 'D'),
+                      '1'  => array('I', 'X', 'C'));
         $roman = '';
 
         if ($num < 0) {
