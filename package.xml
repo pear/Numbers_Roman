@@ -4,9 +4,9 @@
   <name>Numbers_Roman</name>
   <summary>Provides methods for converting to and from Roman Numerals.</summary>
   <description>
-    Numbers_Roman provides static methods for converting to and from Roman numerals.
-    It supports Roman numerals in both uppercase and lowercase styles and conversion 
-    for and to numbers up to 5 999 999
+    Numbers_Roman provides static methods for converting to and from Roman 
+    numerals. It supports Roman numerals in both uppercase and lowercase 
+    styles and conversion for and to numbers up to 5 999 999
   </description>
 <license>PHP</license> 
   <maintainers>
@@ -30,16 +30,15 @@
     <state>stable</state>
     <notes>
       - Added support for lowercase input/output
-      - Starting with this release conversion is supported from integers up to 5 999 999
-        and from the equivalent Roman Numerals
-      - Added an optional HTML tag to disply roman numerals over 4000 in an historically
-        accurate fashion 
+      - Starting with this release conversion is supported from integers up to 
+        5 999 999 and from the equivalent Roman Numerals
+      - Added an optional HTML tag to disply roman numerals over 4000 in an 
+        historically accurate fashion 
       - General fixes and code rewrite maintaining backward compatibility
     </notes>
     <state>stable</state>
     <filelist> 
       <dir name="/" baseinstalldir="Numbers"> 
-        <file role="php" baseinstalldir="Numbers" name="Roman.php"/> 
         <file role="php">Roman.php</file> 
       </dir> 
     </filelist>
