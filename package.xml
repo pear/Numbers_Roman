@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<package>
+ <name>Math_Number</name>
+ <summary>Library to work with different number formats.</summary>
+ <description>
+  Library to work with different number formats.
+ </description>
+ <maintainer>
+  <user>sterling</user>
+  <name>Sterling Hughes</name>
+  <email>sterling@php.net</email>
+ </maintainer>
+ <release>
+  <version>1.0</version>
+  <date>2002-01-20</date>
+  <notes>
+   This is the initial independent PEAR release.
+  </notes>
+ </release>
+ <filelist>
+  <dir name="/" baseinstalldir="Math">
+    <file role="php">Roman.php</file>
+  </dir>
+ </filelist>
+</package>
