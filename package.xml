@@ -36,7 +36,7 @@
         historically accurate fashion 
       - General fixes and code rewrite maintaining backward compatibility
     </notes>
-    <state>stable</state>
+    <state>beta</state>
     <filelist> 
       <dir name="/" baseinstalldir="Numbers"> 
        <file role="php">Roman.php</file>
