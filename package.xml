@@ -24,8 +24,8 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>0.1.2</version>
-    <date>2004-04-25</date>
+    <version>0.2.0</version>
+    <date>2004-04-28</date>
     <license>PHP</license>
     <state>stable</state>
     <notes>
@@ -39,8 +39,11 @@
     <state>stable</state>
     <filelist> 
       <dir name="/" baseinstalldir="Numbers"> 
-        <file role="php">Roman.php</file> 
-      </dir> 
+	<file role="php">Roman.php</file>
+        <dir name="docs">
+          <file role="doc">example.php</file>	
+       </dir>
+     </dir> 
     </filelist>
   </release>
   <changelog>
