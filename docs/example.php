@@ -1,5 +1,5 @@
 <?php
-// Numbers Roman exaple 
+// Numbers Roman example 
 // $Id$
 
 require_once("Numbers/Roman.php");
