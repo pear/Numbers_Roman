@@ -69,7 +69,7 @@ class Numbers_Roman
         /*
          * remove all inapropriate characters
          */
-        $roman = preg_replace('/[ABE-HJKN-TWYZ1-9\W\s]/', '', $roman);
+        $roman = preg_replace('/[^_MDCLXVUI]/', '', $roman);
 
         /*
          * replace u with v, in case the number being parsed
@@ -148,7 +148,12 @@ class Numbers_Roman
                 * subtract the value of the current numeral.
                 */
                 if ($state > $conv[$pos]) {
-                    $arabic -= $conv[$pos];
+                    if (!$state2){
+                        $arabic -= $conv[$pos];
+                        $state2 = true;
+                    } else {
+                        PEAR::raiseError('Numbers_Roman::toNumber error: Invalid numeral order in input (multiple subtraction)',0, PEAR_ERROR_TRIGGER);
+                    }
 
                    /*
                     * else, add the value of the numeral to our number
@@ -158,6 +163,7 @@ class Numbers_Roman
                 } else {
                     $arabic += $conv[$pos];
                     $state = $conv[$pos];
+                    $state2 = false;
                 }
             }
 
