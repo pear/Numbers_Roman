@@ -60,53 +60,53 @@ class Numbers_Roman
  * we first convert them into single characters
  *
  */
+ 
+ $roman = str_replace("_V", "S", $roman);
+ $roman = str_replace("_X", "R", $roman);
+ $roman = str_replace("_L", "Q", $roman);
+ $roman = str_replace("_C", "P", $roman);
+ $roman = str_replace("_D", "O", $roman);
+ $roman = str_replace("_M", "N", $roman);
+ $conv = array(
+ array("letter" => 'I', "number" => 1),
+ array("letter" => 'V', "number" => 5),
+ array("letter" => 'X', "number" => 10),
+ array("letter" => 'L', "number" => 50),
+ array("letter" => 'C', "number" => 100),
+ array("letter" => 'D', "number" => 500),
+ array("letter" => 'M', "number" => 1000),
+ array("letter" => 'S', "number" => 5000),
+ array("letter" => 'R', "number" => 10000),
+ array("letter" => 'Q', "number" => 50000),
+ array("letter" => 'P', "number" => 100000),
+ array("letter" => 'O', "number" => 500000),
+ array("letter" => 'N', "number" => 1000000),
+ array("letter" => 0, "number" => 0)
+ );
+ $arabic = 0;
+ $state = 0;
+ $sidx = 0;
+ $len = strlen($roman) - 1;
 		
-		$roman = str_replace("_V", "S", $roman);
-		$roman = str_replace("_X", "R", $roman);
-		$roman = str_replace("_L", "Q", $roman);
-		$roman = str_replace("_C", "P", $roman);
-		$roman = str_replace("_D", "O", $roman);
-		$roman = str_replace("_M", "N", $roman);
-		$conv = array(
-		array("letter" => 'I', "number" => 1),
-		array("letter" => 'V', "number" => 5),
-		array("letter" => 'X', "number" => 10),
-		array("letter" => 'L', "number" => 50),
-		array("letter" => 'C', "number" => 100),
-		array("letter" => 'D', "number" => 500),
-		array("letter" => 'M', "number" => 1000),
-		array("letter" => 'S', "number" => 5000),
-		array("letter" => 'R', "number" => 10000),
-		array("letter" => 'Q', "number" => 50000),
-		array("letter" => 'P', "number" => 100000),
-		array("letter" => 'O', "number" => 500000),
-		array("letter" => 'N', "number" => 1000000),
-		array("letter" => 0, "number" => 0)
-		);
-		$arabic = 0;
-		$state = 0;
-		$sidx = 0;
-		$len = strlen($roman) - 1;
-		
-		while ($len >= 0) {
-			$i = 0;
-			$sidx = $len;
-			
-			while ($conv[$i]['number'] > 0) {
-				if (strtoupper($roman[$sidx]) == $conv[$i]['letter']) {
-					if ($state > $conv[$i]['number']) {
-						$arabic -= $conv[$i]['number'];
-					} else {
-						$arabic += $conv[$i]['number'];
-						$state = $conv[$i]['number'];
-					}
-				}
-				$i++;
-			}
-			$len--;
-		}
-		
-		return $arabic;
+ while ($len >= 0) {
+     $i = 0;
+     $sidx = $len;
+     
+     while ($conv[$i]['number'] > 0) {
+         if (strtoupper($roman[$sidx]) == $conv[$i]['letter']) {
+             if ($state > $conv[$i]['number']) {
+                 $arabic -= $conv[$i]['number'];
+             } else {
+                 $arabic += $conv[$i]['number'];
+                 $state = $conv[$i]['number'];
+             }
+         }
+         $i++;
+     }
+     $len--;
+ }
+ 
+ return $arabic;
 	}
 	
 	
@@ -119,12 +119,12 @@ class Numbers_Roman
  * @access private
  */
 
-
-	function toRoman($num, $uppercase = true)
-	{
-		return $this->toNumeral($num, $uppercase);
-	}
-	
+ 
+ function toRoman($num, $uppercase = true)
+ {
+     return $this->toNumeral($num, $uppercase);
+ }
+ 
 	
 	// }}}
 	// {{{ toNumeral()
@@ -151,48 +151,48 @@ class Numbers_Roman
  *
  */
 
-	function toNumeral($num, $uppercase = true, $html = true)
-	{
-		$conv = array(10 => array('X', 'C', 'M'),
-		5 => array('V', 'L', 'D'),
-		1 => array('I', 'X', 'C'));
-		$roman = '';
-		
-		if ($num < 0) {
-			return '';
-		}
-		
-		$num = (int) $num;
-		
-		$digit = (int) ($num / 1000);
-		$num -= $digit * 1000;
-		while ($digit > 0) {
-			$roman .= 'M';
-			$digit--;
-		}
-		
-		for ($i = 2; $i >= 0; $i--) {
-			$power = pow(10, $i);
-			$digit = (int) ($num / $power);
-			$num -= $digit * $power;
-			
-			if (($digit == 9) || ($digit == 4)) {
-				$roman .= $conv[1][$i] . $conv[$digit+1][$i];
-			} else {
-				if ($digit >= 5) {
-					$roman .= $conv[5][$i];
-					$digit -= 5;
-				}
-				
-				while ($digit > 0) {
-					$roman .= $conv[1][$i];
-					$digit--;
-					
-					
-					
-				}
-			}
-		}
+ function toNumeral($num, $uppercase = true, $html = true)
+ {
+     $conv = array(10 => array('X', 'C', 'M'),
+     5 => array('V', 'L', 'D'),
+     1 => array('I', 'X', 'C'));
+     $roman = '';
+     
+     if ($num < 0) {
+         return '';
+     }
+     
+     $num = (int) $num;
+     
+     $digit = (int) ($num / 1000);
+     $num -= $digit * 1000;
+     while ($digit > 0) {
+         $roman .= 'M';
+         $digit--;
+     }
+     
+     for ($i = 2; $i >= 0; $i--) {
+         $power = pow(10, $i);
+         $digit = (int) ($num / $power);
+         $num -= $digit * $power;
+         
+         if (($digit == 9) || ($digit == 4)) {
+             $roman .= $conv[1][$i] . $conv[$digit+1][$i];
+         } else {
+             if ($digit >= 5) {
+                 $roman .= $conv[5][$i];
+                 $digit -= 5;
+             }
+             
+             while ($digit > 0) {
+                 $roman .= $conv[1][$i];
+                 $digit--;
+                 
+                 
+                 
+             }
+         }
+     }
 /*
  * Preparing the conversion of big integers over 3999
  * One of the systems used by the Romans  to represent 4000 and bigger numbers
@@ -202,14 +202,14 @@ class Numbers_Roman
  * we will always expect the _ as a representation of
  * the html overscore
  */
-		if ($html == true) {
-			$over = '<span style="text-decoration:overline;">';
-			$overe = '</span>';
-		}
-		elseif ($html == false) {
-			$over = '_';
-			$overe = '';
-		}
+ if ($html == true) {
+     $over = '<span style="text-decoration:overline;">';
+     $overe = '</span>';
+ }
+ elseif ($html == false) {
+     $over = '_';
+     $overe = '';
+ }
 /*
  * Replacing the previously produced multiple MM with the relevant numeral
  * e.g. for 1 000 000 the roman numeral is _M (overscore on the M)
@@ -231,37 +231,37 @@ class Numbers_Roman
  * historically correct Roman Numeral.
  */
 
-		$roman = str_replace(str_repeat("M", 1000),  $over."AFS".  $overe, $roman);
-		$roman = str_replace(str_repeat("M", 900),   $over."C".$overe.$over."AFS". $overe, $roman);
-		$roman = str_replace(str_repeat("M", 500),   $over."D".    $overe, $roman);
-		$roman = str_replace(str_repeat("M", 400),   $over."C".$overe.$over."D".$overe, $roman);
-		$roman = str_replace(str_repeat("M", 100),   $over."C".    $overe, $roman);
-		$roman = str_replace(str_repeat("M", 90),    $over."X".$overe.$over."C".$overe, $roman);
-		$roman = str_replace(str_repeat("M", 50),    $over."L".    $overe, $roman);
-		$roman = str_replace(str_repeat("M", 40),    $over."X".$overe.$over."L".$overe, $roman);
-		$roman = str_replace(str_repeat("M", 10),    $over."X".    $overe, $roman);
-		$roman = str_replace(str_repeat("M", 5),     $over."V".    $overe, $roman);
-		$roman = str_replace(str_repeat("M", 4), "M".$over."V".    $overe, $roman);
-		
+ $roman = str_replace(str_repeat("M", 1000),  $over."AFS".  $overe, $roman);
+ $roman = str_replace(str_repeat("M", 900),   $over."C".$overe.$over."AFS". $overe, $roman);
+ $roman = str_replace(str_repeat("M", 500),   $over."D".    $overe, $roman);
+ $roman = str_replace(str_repeat("M", 400),   $over."C".$overe.$over."D".$overe, $roman);
+ $roman = str_replace(str_repeat("M", 100),   $over."C".    $overe, $roman);
+ $roman = str_replace(str_repeat("M", 90),    $over."X".$overe.$over."C".$overe, $roman);
+ $roman = str_replace(str_repeat("M", 50),    $over."L".    $overe, $roman);
+ $roman = str_replace(str_repeat("M", 40),    $over."X".$overe.$over."L".$overe, $roman);
+ $roman = str_replace(str_repeat("M", 10),    $over."X".    $overe, $roman);
+ $roman = str_replace(str_repeat("M", 5),     $over."V".    $overe, $roman);
+ $roman = str_replace(str_repeat("M", 4), "M".$over."V".    $overe, $roman);
+ 
 		
 /*
  * Replacing AFS with M used in both 1 000 000
  * and 900 000
  *
  */
-		$roman = str_replace("AFS", "M", $roman);
-		
+ $roman = str_replace("AFS", "M", $roman);
+ 
 /*
  *
  * Checking for lowercase output
  *
  */
-		if ($uppercase == false) {
-			$roman = strtolower($roman);
-		}
-		
-		return $roman;
-	}
+ if ($uppercase == false) {
+     $roman = strtolower($roman);
+ }
+ 
+ return $roman;
+ }
 
 	// }}}
 }
