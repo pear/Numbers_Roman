@@ -186,7 +186,7 @@ class Numbers_Roman
      */
     function toRoman($num, $uppercase = true)
     {
-        return $this->toNumeral($num, $uppercase);
+        return Numbers_Roman::toNumeral($num, $uppercase);
     }
 
     // }}}
