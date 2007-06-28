@@ -84,8 +84,8 @@ class Numbers_Roman
          */
         $roman = str_replace('_V', 'S', $roman);
         $roman = str_replace('_X', 'R', $roman);
-        $roman = str_replace('_L', 'Q', $roman);
-        $roman = str_replace('_C', 'P', $roman);
+        $roman = str_replace('_L', 'P', $roman);
+        $roman = str_replace('_C', 'Q', $roman);
         $roman = str_replace('_D', 'O', $roman);
         $roman = str_replace('_M', 'N', $roman);
 
