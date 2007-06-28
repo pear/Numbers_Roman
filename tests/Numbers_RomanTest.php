@@ -143,6 +143,8 @@ class Numbers_RomanTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('_M',      Numbers_Roman::toNumeral(1000000, true, false));
 
         $this->assertEquals('_VMDCLXVI', Numbers_Roman::toNumeral(6666, true, false));
+
+        $this->assertEquals('',      Numbers_Roman::toNumeral(-1));
     }
 
 
