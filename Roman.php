@@ -319,7 +319,7 @@ class Numbers_Roman
          * and 900 000
          */
         $roman = str_replace('AFS', 'M', $roman);
-        
+
         /*
          * Make HTML output more readable by combining span tags
          * where possible.
