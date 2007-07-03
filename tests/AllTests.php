@@ -1,7 +1,6 @@
 <?php
 if (!defined('PHPUnit_MAIN_METHOD')) {
-    define('PHPUnit_MAIN_METHOD', 'AllTests::main');
-    chdir(dirname(__FILE__) . '/../');
+    define('PHPUnit_MAIN_METHOD', 'Numbers_Roman_AllTests::main');
 }
 
 require_once 'PHPUnit/Framework/TestSuite.php';
@@ -11,7 +10,7 @@ require_once 'PHPUnit/TextUI/TestRunner.php';
 require_once 'Numbers_RomanTest.php';
 
 
-class AllTests
+class Numbers_Roman_AllTests
 {
     public static function main()
     {
@@ -29,7 +28,7 @@ class AllTests
     }
 }
 
-if (PHPUnit_MAIN_METHOD == 'AllTests::main') {
-    AllTests::main();
+if (PHPUnit_MAIN_METHOD == 'Numbers_Roman_AllTests::main') {
+    Numbers_Roman_AllTests::main();
 }
 ?>
