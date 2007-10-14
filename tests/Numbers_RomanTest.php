@@ -99,7 +99,11 @@ class Numbers_RomanTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(1904, Numbers_Roman::toNumber('MDCCCCIIII'));
 
         //error handling
+        $nReporting = error_reporting();
+        error_reporting($nReporting ^ E_USER_NOTICE);
         $this->assertEquals( 9  , Numbers_Roman::toNumber('IIX'));
+        //restore old value
+        error_reporting($nReporting);
     }
 
     /**

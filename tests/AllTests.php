@@ -6,7 +6,7 @@ if (!defined('PHPUnit_MAIN_METHOD')) {
 require_once 'PHPUnit/Framework/TestSuite.php';
 require_once 'PHPUnit/TextUI/TestRunner.php';
 
-
+chdir(dirname(__FILE__) . '/../');
 require_once 'Numbers_RomanTest.php';
 
 
@@ -20,9 +20,9 @@ class Numbers_Roman_AllTests
 
     public static function suite()
     {
-        $suite = new PHPUnit_Framework_TestSuite('Numbers_RomanTest');
+        $suite = new PHPUnit_Framework_TestSuite('Numbers_Roman tests');
         /** Add testsuites, if there is. */
-        //$suite->addTestSuite('Numbers_RomanTest');
+        $suite->addTestSuite('Numbers_RomanTest');
 
         return $suite;
     }
