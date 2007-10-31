@@ -14,14 +14,20 @@ styles and conversion for and to numbers up to 5 999 999
   <name>David Costa</name>
   <user>gurugeek</user>
   <email>gurugeek@php.net</email>
-  <active>yes</active>
+  <active>no</active>
  </lead>
- <developer>
+ <lead>
   <name>Klaus Guenther</name>
   <user>thesaur</user>
   <email>klaus@capitalfocus.org</email>
   <active>yes</active>
- </developer>
+ </lead>
+ <lead>
+  <name>Sterling Hughes</name>
+  <user>sterling</user>
+  <email>sterling@php.net</email>
+  <active>no</active>
+ </lead>
  <date>2007-10-14</date>
  <time>21:38:00</time>
  <version>
