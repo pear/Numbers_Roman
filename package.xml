@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.6.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
-http://pear.php.net/dtd/tasks-1.0.xsd
-http://pear.php.net/dtd/package-2.0
-http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>Numbers_Roman</name>
  <channel>pear.php.net</channel>
  <summary>Provides methods for converting to and from Roman Numerals.</summary>
  <description>Numbers_Roman provides static methods for converting to and from Roman
 numerals. It supports Roman numerals in both uppercase and lowercase
-styles and conversion for and to numbers up to 5 999 999
- </description>
+styles and conversion for and to numbers up to 5 999 999</description>
  <lead>
   <name>David Costa</name>
   <user>gurugeek</user>
@@ -28,10 +24,10 @@ styles and conversion for and to numbers up to 5 999 999
   <email>sterling@php.net</email>
   <active>no</active>
  </lead>
- <date>2007-10-14</date>
- <time>21:38:00</time>
+ <date>2011-11-21</date>
+ <time>23:34:25</time>
  <version>
-  <release>1.0.2</release>
+  <release>1.0.3</release>
   <api>1.0.2</api>
  </version>
  <stability>
@@ -40,26 +36,16 @@ styles and conversion for and to numbers up to 5 999 999
  </stability>
  <license uri="http://www.php.net/license">PHP</license>
  <notes>
-QA release:
-- Fix bug with _L and _C giving wrong values (swapped)
-- Fix bug: toRoman() used $this although it's static
-- Add unit tests
+QA release
  </notes>
  <contents>
-  <dir name="/">
-   <dir name="docs">
-    <dir name="examples">
-     <file baseinstalldir="Numbers" name="example.php" role="doc" />
-    </dir>
-   </dir>
-   <dir name="tests">
-    <file name="AllTests.php" role="test"/>
-    <file name="Numbers_RomanTest.php" role="test"/>
-   </dir>
-   <file baseinstalldir="Numbers" name="Roman.php" role="php" />
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="Numbers" md5sum="c8c819f78c5f1e5ca1ca927cfaf54931" name="docs/examples/example.php" role="doc" />
+   <file baseinstalldir="/" md5sum="2abad1c6119ebac51612a1e0110fbbaf" name="Numbers/Roman.php" role="php" />
+   <file baseinstalldir="/" md5sum="b43c4c853767acd34ab518a9970e4db5" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="/" md5sum="47cf597a13c8439d4d6df864160b3418" name="tests/Numbers_RomanTest.php" role="test" />
   </dir>
  </contents>
-
  <dependencies>
   <required>
    <php>
@@ -71,8 +57,78 @@ QA release:
   </required>
  </dependencies>
  <phprelease />
-
  <changelog>
+  <release>
+   <version>
+    <release>0.1</release>
+    <api>0.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2002-01-26</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+This is the initial release of the Numbers_Roman package which has
+been in php4/pear for a while.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.1</release>
+    <api>0.1.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2004-02-26</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+Fix to enable installation with PEAR installers.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.2.0</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2004-04-28</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+- Added support for lowercase input/output
+- Starting with this release conversion is supported from integers up to
+  5 999 999 and from the equivalent Roman Numerals
+- Added an optional HTML tag to disply roman numerals over 4000 in an
+  historically accurate fashion
+- General fixes and code rewrite maintaining backward compatibility
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2004-04-28</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+- Added support for lowercase input/output
+- Starting with this release conversion is supported from integers up to
+  5 999 999 and from the equivalent Roman Numerals
+- Added an optional HTML tag to disply roman numerals over 4000 in an
+  historically accurate fashion
+- General fixes and code rewrite maintaining backward compatibility
+   </notes>
+  </release>
   <release>
    <version>
     <release>1.0.2</release>
@@ -87,80 +143,23 @@ QA release:
    <notes>
 QA release:
 - Fix bug with _L and _C giving wrong values (swapped)
-- Fix bug: toRoman() used $this although it's static
+- Fix bug: toRoman() used $this although it&apos;s static
 - Add unit tests
    </notes>
   </release>
-
   <release>
    <version>
-    <release>1.0.1</release>
-    <api>1.0.1</api>
-   </version>
-   <stability>
-    <release>beta</release>
-    <api>beta</api>
-   </stability>
-   <date>2004-04-28</date>
-   <license uri="http://www.php.net/license">PHP</license>
-   <notes>- Added support for lowercase input/output
-- Starting with this release conversion is supported from integers up to
-  5 999 999 and from the equivalent Roman Numerals
-- Added an optional HTML tag to disply roman numerals over 4000 in an
-  historically accurate fashion
-- General fixes and code rewrite maintaining backward compatibility
-   </notes>
-  </release>
-
-  <release>
-   <version>
-    <release>0.2.0</release>
-    <api>0.2.0</api>
+    <release>1.0.3</release>
+    <api>1.0.2</api>
    </version>
    <stability>
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2004-04-28</date>
+   <date>2011-11-21</date>
    <license uri="http://www.php.net/license">PHP</license>
-   <notes>- Added support for lowercase input/output
-- Starting with this release conversion is supported from integers up to
-  5 999 999 and from the equivalent Roman Numerals
-- Added an optional HTML tag to disply roman numerals over 4000 in an
-  historically accurate fashion
-- General fixes and code rewrite maintaining backward compatibility
-
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>0.1.1</release>
-    <api>0.1.1</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2004-02-26</date>
-   <license uri="http://www.php.net/license">PHP</license>
-   <notes>Fix to enable installation with PEAR installers.
-
-   </notes>
-  </release>
-  <release>
-   <version>
-    <release>0.1</release>
-    <api>0.1</api>
-   </version>
-   <stability>
-    <release>stable</release>
-    <api>stable</api>
-   </stability>
-   <date>2002-01-26</date>
-   <license uri="http://www.php.net/license">PHP</license>
-   <notes>This is the initial release of the Numbers_Roman package which has
-been in php4/pear for a while.
-
+   <notes>
+QA release
    </notes>
   </release>
  </changelog>
