@@ -30,25 +30,7 @@ class Numbers_RomanTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Sets up the fixture, for example, open a network connection.
-     * This method is called before a test is executed.
-     *
-     * @access protected
-     */
-    protected function setUp() {
-    }
-
-    /**
-     * Tears down the fixture, for example, close a network connection.
-     * This method is called after a test is executed.
-     *
-     * @access protected
-     */
-    protected function tearDown() {
-    }
-
-    /**
-     * @todo Implement testToNumber().
+     * @todo Use a dataprovider?
      */
     public function testToNumber() {
         $this->assertEquals(   1, Numbers_Roman::toNumber('I'));
@@ -104,6 +86,8 @@ class Numbers_RomanTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals( 9  , Numbers_Roman::toNumber('IIX'));
         //restore old value
         error_reporting($nReporting);
+
+        $this->assertEquals(0, Numbers_Roman::toNumber('LM'));
     }
 
     /**
