@@ -86,8 +86,6 @@ class Numbers_RomanTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals( 9  , Numbers_Roman::toNumber('IIX'));
         //restore old value
         error_reporting($nReporting);
-
-        $this->assertEquals(0, Numbers_Roman::toNumber('LM'));
     }
 
     /**
