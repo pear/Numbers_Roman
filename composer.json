@@ -1,0 +1,41 @@
+{
+    "authors": [
+        {
+            "email": "gurugeek@php.net",
+            "name": "David Costa",
+            "role": "Lead"
+        },
+        {
+            "email": "klaus@capitalfocus.org",
+            "name": "Klaus Guenther",
+            "role": "Lead"
+        },
+        {
+            "email": "sterling@php.net",
+            "name": "Sterling Hughes",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Numbers_Roman": "./"
+        }
+    },
+    "description": "More info available on: http://pear.php.net/package/Numbers_Roman",
+    "include-path": [
+        "./"
+    ],
+    "license": "PHP",
+    "name": "pear/numbers_roman",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Numbers_Roman",
+        "source": "https://github.com/pear/Numbers_Roman"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
