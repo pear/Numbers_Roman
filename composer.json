@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "Numbers_Roman": "./"
+            "Numbers": "./"
         }
     },
     "description": "More info available on: http://pear.php.net/package/Numbers_Roman",
