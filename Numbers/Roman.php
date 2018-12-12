@@ -51,6 +51,27 @@ class Numbers_Roman
     // {{{ toNumber()
 
     /**
+     * Check if a string given is a real roman number
+     *
+     * @param  string  $string The string to check if it is a valid roman number
+     *
+     * @return boolean  
+     *
+     * @access public
+     */
+    public function isRomanNumber($string)
+    {
+        // @todo RFC to be implemented properly
+        
+        // 1) The string don't should contain spaces or any symbol not valid
+        // in the grammar
+        
+        // 2) The string given should be converted to a normal valid number
+        
+        return false;
+    }
+    
+    /**
      * Converts a roman numeral to a number
      *
      * @param  string  $roman The roman numeral to convert lower cased 
