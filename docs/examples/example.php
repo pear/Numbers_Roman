@@ -1,7 +1,7 @@
 <?php
 // Numbers Roman example
 
-require_once("Numbers/Roman.php");
+require_once 'Numbers/Roman.php';
 $Num = rand(1,3999); 
 $NumHtml = rand(500,5999999);
 
@@ -23,5 +23,4 @@ echo "Random: ".$Num." (To roman) -> ".$key." (Back to arabic) -> ".$NumKey." <B
 
 echo "Random with HTML enabled converting ".$NumHtml." into a Roman Numeral ".$RomeHtml."<BR>";
 echo "Lowercase html $RomeHtmlnoLC.. <BR> ".$RomenoHtml." uppercase no html <BR> 
-$RomenoHtmlLC lowercase no html <BR>and back to Arabic ".$toArabic."";
-?>
+$RomenoHtmlLC lowercase no html <BR>and back to Arabic ".$toArabic;
